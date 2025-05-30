@@ -1,11 +1,11 @@
 # Development environment override
 services:
-  web:
+  web-app:
     build:
-      context: ./web
+      context: ${APP_DIRNAME:-./nuxt-app}              # change dir name
       target: dev
     volumes:
-      - ./web:/app
+      - ${APP_DIRNAME:-./nuxt-app}:/app                # change dir name
       - /app/node_modules
       - /app/.nuxt
     stdin_open: true                # Needed for HMR
@@ -15,7 +15,3 @@ services:
       - "3000:3000"
     extra_hosts:
       - "host.docker.internal:host-gateway"
-
-    mongo:
-      ports:
-        - "27017:27017"

@@ -1,5 +1,5 @@
 services:
-  web:
+  web-app:
     image: web-app
     restart: unless-stopped
     environment:
@@ -11,6 +11,8 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: ${MONGODB_ROOT_USERNAME:-admin}
       MONGO_INITDB_ROOT_PASSWORD: ${MONGODB_ROOT_PASSWORD:-password}
+    ports:
+      - "27017:27017"
     healthcheck:
       test: ["CMD","mongosh", "--eval", "db.adminCommand('ping')"]
       timeout: 60s

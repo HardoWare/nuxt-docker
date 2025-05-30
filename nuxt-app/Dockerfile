@@ -1,4 +1,3 @@
-#syntax=docker/dockerfile:1.4
 LABEL authors="HardWare"
 
 # Versions
