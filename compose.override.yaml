@@ -1,0 +1,21 @@
+# Development environment override
+services:
+  web:
+    build:
+      context: ./web
+      target: dev
+    volumes:
+      - ./web:/app
+      - /app/node_modules
+      - /app/.nuxt
+    stdin_open: true                # Needed for HMR
+    environment:
+      CHOKIDAR_USEPOLLING: true    # Needed for HMR
+    ports:
+      - "3000:3000"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+    mongo:
+      ports:
+        - "27017:27017"

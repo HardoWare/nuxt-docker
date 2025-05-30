@@ -1,0 +1,11 @@
+# Production environment override
+services:
+  web:
+    build:
+      context: ./rocket
+      target: prod
+
+  mongo:
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGODB_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGODB_ROOT_PASSWORD}
