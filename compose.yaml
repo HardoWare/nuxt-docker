@@ -3,7 +3,7 @@ services:
     image: web-app
     restart: unless-stopped
     environment:
-      MONGODB_URI: mongodb://${MONGODB_ROOT_USERNAME}:${MONGODB_ROOT_PASSWORD}@${MONGODB_URI:-mongo:27017}/
+      MONGODB_URI: mongodb://${MONGODB_ROOT_USERNAME}:${MONGODB_ROOT_PASSWORD}@${MONGODB_URI:-mongo:27017}/${MONGODB_NAME:-test_db}
   
   mongo:
     image: mongo:${MONGODB_VERSION:-8.0}
