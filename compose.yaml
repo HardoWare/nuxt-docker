@@ -1,9 +1,9 @@
 services:
-  web-app:
-    image: web-app
+  nuxt-app:
+    image: nuxt-app
     restart: unless-stopped
     environment:
-      MONGODB_URI: mongodb://${MONGODB_ROOT_USERNAME}:${MONGODB_ROOT_PASSWORD}@${MONGODB_URI:-mongo:27017}/${MONGODB_NAME:-test_db}
+      MONGODB_URI: mongodb://${MONGODB_ROOT_USERNAME}:${MONGODB_ROOT_PASSWORD}@${MONGODB_URI:-mongo:27017}/${MONGODB_NAME:-}
   
   mongo:
     image: mongo:${MONGODB_VERSION:-8.0}

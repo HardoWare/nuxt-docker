@@ -1,5 +1,3 @@
-LABEL authors="HardWare"
-
 # Versions
 FROM node:20-alpine AS node_upstream
 

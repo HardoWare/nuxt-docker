@@ -1,16 +1,16 @@
 # Development environment override
 services:
-  web-app:
+  nuxt-app:
     build:
-      context: ${APP_DIRNAME:-./nuxt-app}              # change dir name
+      context: ./nuxt-app # change dir name
       target: dev
     volumes:
-      - ${APP_DIRNAME:-./nuxt-app}:/app                # change dir name
+      - ./nuxt-app:/app # change dir name
       - /app/node_modules
       - /app/.nuxt
-    stdin_open: true                # Needed for HMR
+    stdin_open: true              # Needed for HMR
     environment:
-      CHOKIDAR_USEPOLLING: true    # Needed for HMR
+      CHOKIDAR_USEPOLLING: true   # Needed for HMR
     ports:
       - "3000:3000"
     extra_hosts:
