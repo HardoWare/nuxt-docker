@@ -1,6 +1,6 @@
 # Production environment override
 services:
-  web-app:
+  nuxt-app:
     build:
       context: ${APP_DIRNAME:-./nuxt-app}   #change dir name
       target: prod
