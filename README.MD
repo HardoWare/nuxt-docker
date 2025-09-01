@@ -12,14 +12,23 @@ Tested on Windows 10 / 11 (WSL2)
 
 ### Create Nuxt App (select override content)
 ```shell
-pnpm create nuxt@latest nuxt-app
+  pnpm create nuxt@latest nuxt-app
 ```
 
 ### Build web container:
 ```shell
-docker compose build --no-cache
+  docker compose build --pull --no-cache
 ```
 ### Run containers:
 ```shell
-docker compose up --wait
+  docker compose up --wait
+```
+
+### Build to production:
+```shell
+  docker compose -f compose.yaml -f compose.prod.yaml build --no-cache
+```
+### Deploy to production:
+```shell
+  docker compose -f compose.yaml -f compose.prod.yaml up --wait
 ```
